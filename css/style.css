@@ -7,14 +7,24 @@
 :root{
     --head-bg: #1777F2;
     --number-border: #000000;
+    --found-number: #00ff00;
+    --nofound-number: #ff0000;
 }
 
 /* REGOLE CSS ----------------------------------- */
 /* REGOLE GENERALI -------------------------------*/
 
 .container{
-    width: 1170px;
+    max-width: 1170px;
     margin: 0 auto;
+}
+
+.w-100{
+    width: 100%;
+}
+
+.d-none{
+    display: none;
 }
 
 .d-flex{
@@ -45,6 +55,10 @@ header{
     box-shadow: 0px 5px 10px 0px rgba(0,0,0,0.5)
 }
 
+#start{
+    padding: 5px 10px;
+}
+
 /* MAIN ----------------------------------------- */
 
 main{
@@ -55,5 +69,13 @@ main{
     padding: 10px;
     border: 2px solid var(--number-border);
     box-shadow: 0px 5px 10px 0px rgba(0,0,0,0.5)
+}
+
+.found{
+    background-color: var(--found-number);
+}
+
+.noFound{
+    background-color: var(--nofound-number);
 }
 
