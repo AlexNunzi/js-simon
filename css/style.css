@@ -3,3 +3,57 @@
     padding: 0;
     box-sizing: border-box;
 }
+
+:root{
+    --head-bg: #1777F2;
+    --number-border: #000000;
+}
+
+/* REGOLE CSS ----------------------------------- */
+/* REGOLE GENERALI -------------------------------*/
+
+.container{
+    width: 1170px;
+    margin: 0 auto;
+}
+
+.d-flex{
+    display: flex;
+}
+
+.align-center{
+    align-items: center;
+}
+
+.justify-center{
+    justify-content: center;
+}
+
+.justify-spaceAround{
+    justify-content: space-around;
+}
+
+.text-center{
+    text-align: center;
+}
+
+/* HEADER --------------------------------------- */
+
+header{
+    height: 80px;
+    background-color: var(--head-bg);
+    box-shadow: 0px 5px 10px 0px rgba(0,0,0,0.5)
+}
+
+/* MAIN ----------------------------------------- */
+
+main{
+    padding: 100px;
+}
+
+.slot{
+    padding: 10px;
+    border: 2px solid var(--number-border);
+    box-shadow: 0px 5px 10px 0px rgba(0,0,0,0.5)
+}
+
