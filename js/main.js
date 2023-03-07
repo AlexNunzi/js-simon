@@ -8,13 +8,13 @@ startDom.addEventListener('click', function(){
     userMessageDom.classList.add('d-none');
     numbersContainerDom.classList.remove('d-none');
     let sortedNumber = [];
-    
+    let userNumbers = [];
     sortedNumber = createSlotsOfRandomNumbers(5, numbersContainerDom, sortedNumber);
     
     console.log(sortedNumber);
     
     const playDelay = setTimeout(startGame, 3000); //30000
-
+    const promptDelay = setTimeout(userPrompt, 4000); //31000
 });
 
 
@@ -66,4 +66,17 @@ function startGame(){
     for(i=0; i < numbers.length; i++){
         numbers[i].classList.add('d-none');
     }
+}
+
+function userPrompt(){
+    let userInputNumber = [];
+    let number;
+    for(i=0; i < 5; i++){
+        do{
+            number = parseInt(prompt(`Inserisci il ${i+1}° numero`));
+        }
+        while(isNaN(number) || (number < 0 || number > 100) || userInputNumber.includes(number))
+        userInputNumber.push(number);
+    }
+    return userInputNumber;
 }
