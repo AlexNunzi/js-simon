@@ -75,6 +75,10 @@ main{
     padding: 100px;
 }
 
+.numbersContainer{
+    margin-bottom: 2rem;
+}
+
 .slot{
     min-width: 40px;
     min-height: 40px;

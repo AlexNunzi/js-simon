@@ -4,7 +4,9 @@ const startDom = document.getElementById('start');
 const userMessageDom = document.getElementById('userMessage');
 
 
-startDom.addEventListener('click', function(){
+startDom.addEventListener('click', function startClick(){
+
+    this.removeEventListener('click', startClick);
 
     userMessageDom.classList.add('d-none');
     numbersContainerDom.classList.remove('d-none');
@@ -17,6 +19,9 @@ startDom.addEventListener('click', function(){
     setTimeout(function(){
         userPrompt(sortedNumber);
     }, 31000); //31000
+    setTimeout(function(){
+        startDom.addEventListener('click', startClick);
+    }, 35000); //35000
 });
 
 
@@ -79,7 +84,8 @@ function userPrompt(checkList){
     let foundNumber = 0;
     for(i=0; i < checkList.length; i++){
         do{
-            number = parseInt(prompt(`Inserisci il ${i+1}° numero`));
+            number = parseInt(prompt(`Inserisci il ${i+1}° numero compreso tra 0 e 100.
+I numeri già inseriti sono: ${userChoosenNumber}`));
         }
         while(isNaN(number) || (number < 0 || number > 100) || userChoosenNumber.includes(number))
         userChoosenNumber.push(number);
@@ -103,5 +109,6 @@ function userPrompt(checkList){
             numbers[i].classList.add('d-flex');
         }
         scoreDom.classList.remove('d-none');
-        scoreDom.innerHTML = `Hai indovinato ${foundNumber} numeri!`;
+        scoreDom.innerHTML = `I numeri che hai scelto sono: ${userChoosenNumber}.<br/>
+Hai indovinato ${foundNumber} numeri!`;
 }
